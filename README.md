@@ -46,6 +46,7 @@ Step 4: Connect or Disconnect session on Resume() and Pause() method like that:
         shareScreen!!.disconnectSession()
     }
 
+![Screenshot 2024-06-17 at 7 01 43 PM](https://github.com/bharatKumawatds/ScreenSharing-Vonage-/assets/172746681/07e0e9f9-9043-4d44-9a98-3f9ca88bfa0d)
 
 
         

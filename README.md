@@ -6,6 +6,8 @@ Step 1: Add maven { url 'https://jitpack.io' } in build.gradle(project level) or
 
 Step 2: implementation 'com.github.bharatKumawatds:ScreenSharing-Vonage-:1.0.0' in build.gradle(Module level)
 
+![Screenshot 2024-06-17 at 7 01 43 PM](https://github.com/bharatKumawatds/ScreenSharing-Vonage-/assets/172746681/07e0e9f9-9043-4d44-9a98-3f9ca88bfa0d)
+
 Step 3: create an instance of screen share class and initialize builder on oncreate() method like this 
 
 
@@ -46,7 +48,7 @@ Step 4: Connect or Disconnect session on Resume() and Pause() method like that:
         shareScreen!!.disconnectSession()
     }
 
-![Screenshot 2024-06-17 at 7 01 43 PM](https://github.com/bharatKumawatds/ScreenSharing-Vonage-/assets/172746681/07e0e9f9-9043-4d44-9a98-3f9ca88bfa0d)
+
 
 
         

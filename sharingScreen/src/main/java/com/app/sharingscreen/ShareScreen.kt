@@ -28,7 +28,7 @@ class ShareScreen(var myActivity: Activity,var context: Context,val contentView:
     val isValid: Boolean
         get() = !(TextUtils.isEmpty(API_KEY) || TextUtils.isEmpty(SESSION_ID) || TextUtils.isEmpty(TOKEN))
 
-    var permissionlistener: PermissionListener = object : PermissionListener {
+    private var permissionlistener: PermissionListener = object : PermissionListener {
         override fun onPermissionGranted() {
             if (!isValid) {
                 finishWithMessage("Invalid OpenTokConfig. \"\"\"\n" +

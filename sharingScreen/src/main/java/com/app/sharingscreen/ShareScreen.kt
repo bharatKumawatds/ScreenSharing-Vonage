@@ -8,8 +8,9 @@ import android.text.TextUtils
 import android.util.Log
 import android.view.View
 import android.widget.Toast
-import com.gun0912.tedpermission.PermissionListener
-import com.gun0912.tedpermission.normal.TedPermission
+import com.app.sharingscreen.permission.PermissionHandler
+import com.app.sharingscreen.permission.Permissions
+
 import com.opentok.android.BaseVideoRenderer
 import com.opentok.android.OpentokError
 import com.opentok.android.Publisher
@@ -17,9 +18,7 @@ import com.opentok.android.PublisherKit
 import com.opentok.android.Session
 import com.opentok.android.Stream
 
-
-
-class ShareScreen(var myActivity: Activity,var context: Context,val contentView: View,var API_KEY:String,var SESSION_ID:String,var TOKEN:String) {
+class ShareScreen(var myActivity: Activity,var context: Context,val contentView: View,var API_KEY:String,var SESSION_ID:String,var TOKEN:String){
 
      var session: Session? = null
      var publisher: Publisher? = null
@@ -29,28 +28,7 @@ class ShareScreen(var myActivity: Activity,var context: Context,val contentView:
         get() = !(TextUtils.isEmpty(API_KEY) || TextUtils.isEmpty(SESSION_ID) || TextUtils.isEmpty(TOKEN))
 
 
-    private var permissionlistener: PermissionListener = object : PermissionListener {
-        override fun onPermissionGranted() {
-            if (!isValid) {
-                finishWithMessage("Invalid OpenTokConfig. \"\"\"\n" +
-                        "               OpenTokConfig:\n" +
-                        "               API_KEY: $API_KEY\n" +
-                        "               SESSION_ID: $SESSION_ID\n" +
-                        "               TOKEN: $TOKEN\n" +
-                        "               \"\"\".trimIndent()")
-                return
-            }
-            initializeSession(API_KEY, SESSION_ID, TOKEN)
-        }
 
-        override fun onPermissionDenied(deniedPermissions: List<String>) {
-            Toast.makeText(
-                context,
-                "Permission Denied\n$deniedPermissions",
-                Toast.LENGTH_SHORT
-            ).show()
-        }
-    }
 
     data class Builder(
         var myActivity: Activity? = null,
@@ -130,11 +108,28 @@ class ShareScreen(var myActivity: Activity,var context: Context,val contentView:
     }
     private fun requestPermissions() {
 
-        TedPermission.create()
-            .setPermissionListener(permissionlistener)
-            .setDeniedMessage("If you reject permission,you can not use this service\n\nPlease turn on permissions at [Setting] > [Permission]")
-            .setPermissions(Manifest.permission.CAMERA, Manifest.permission.RECORD_AUDIO)
-            .check();
+        val permissions =
+            arrayOf(Manifest.permission.CAMERA, Manifest.permission.RECORD_AUDIO)
+        Permissions.check(
+            context /*context*/,
+            permissions,
+            "Please allow permissions for sharing audio and video." /*rationale*/,
+            null /*options*/,
+            object : PermissionHandler() {
+                override fun onGranted() {
+                    if (!isValid) {
+                        finishWithMessage("Invalid OpenTokConfig. \"\"\"\n" +
+                                "               OpenTokConfig:\n" +
+                                "               API_KEY: $API_KEY\n" +
+                                "               SESSION_ID: $SESSION_ID\n" +
+                                "               TOKEN: $TOKEN\n" +
+                                "               \"\"\".trimIndent()")
+                        return
+                    }
+                    initializeSession(API_KEY, SESSION_ID, TOKEN)
+                }
+            })
+
 
     }
     private fun finishWithMessage(message: String) {

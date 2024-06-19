@@ -23,7 +23,7 @@ material = { group = "com.google.android.material", name = "material", version.r
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 opentok-android-sdk = { module = "com.opentok.android:opentok-android-sdk", version.ref = "opentokAndroidSdk" }
-tedpermission-normal = { module = "io.github.ParkSangGwon:tedpermission-normal", version.ref = "tedpermissionNormal" }
+
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

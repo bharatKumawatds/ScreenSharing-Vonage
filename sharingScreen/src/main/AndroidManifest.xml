@@ -9,5 +9,13 @@
 
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
+    <application>
+
+        <activity
+            android:name=".permission.PermissionsActivity"
+            android:theme="@style/Permissions.TransparentTheme" />
+
+    </application>
+
 
 </manifest>

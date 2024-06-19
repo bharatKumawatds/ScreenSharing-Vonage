@@ -4,9 +4,13 @@ Steps to use:
 
 Step 1: Add maven { url 'https://jitpack.io' } in build.gradle(project level) or in settings.gradle
 
-Step 2: implementation 'com.github.bharatKumawatds:ScreenSharing-Vonage-:1.0.0' in build.gradle(Module level)
+Step 2: implementation 'com.github.bharatKumawatds:ScreenSharing-Vonage:1.0.0' in build.gradle(Module level)
 
-![Screenshot 2024-06-17 at 7 01 43 PM](https://github.com/bharatKumawatds/ScreenSharing-Vonage-/assets/172746681/07e0e9f9-9043-4d44-9a98-3f9ca88bfa0d)
+![Screenshot 2024-06-19 at 3 19 01 PM](https://github.com/bharatKumawatds/ScreenSharing-Vonage/assets/172746681/387b6a0c-31f8-4793-a7dd-ee0746a4453e)
+
+dependencies {
+	        implementation 'com.github.bharatKumawatds:ScreenSharing-Vonage:1.0.0'
+	}
 
 Step 3: create an instance of screen share class and initialize builder on oncreate() method like this 
 

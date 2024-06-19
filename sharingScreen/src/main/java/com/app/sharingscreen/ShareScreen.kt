@@ -41,7 +41,6 @@ class ShareScreen(var myActivity: Activity,var context: Context,val contentView:
     )
 
     {
-
         fun activity(myActivity: Activity) = apply { this.myActivity = myActivity }
         fun context(context: Context) = apply { this.context = context }
         fun contentView(contentView: View) = apply { this.contentView = contentView }

@@ -31,7 +31,7 @@ ShareScreen.Builder()
         shareScreen!!.initializeShareScreen()
         
 
-Note: ".contentView(main_content!!)" pass your main view to capture screen sharing and generate  API_KEY,SESSION_ID & TOKEN first Create OpenTok Account (https://ui.idp.vonage.com/ui/auth/registration) & you can check your session on Video playground also (https://tokbox.com/developer/tools/playground/)     
+Note: ".contentView(main_content!!)" pass your main view to capture screen sharing and generate  API_KEY,SESSION_ID & TOKEN first Create OpenTok Account ([https://ui.idp.vonage.com/ui/auth/registration](https://id.tokbox.com/login?response_type=code&redirect_uri=https%3A%2F%2Ftokbox.com%2Faccount%2Fauth%2Fprovider%2Fcallback&state=eyJyZWRpcmVjdCI6Ii8ifQ%3D%3D&client_id=acountportalprod)) & you can check your session on Video playground also (https://tokbox.com/developer/tools/playground/)     
 
 
 Step 4: Connect or Disconnect session on Resume() and Pause() method like that:

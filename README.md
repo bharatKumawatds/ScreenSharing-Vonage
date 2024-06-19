@@ -8,9 +8,8 @@ Step 2: implementation 'com.github.bharatKumawatds:ScreenSharing-Vonage:1.0.0' i
 
 ![Screenshot 2024-06-19 at 3 19 01 PM](https://github.com/bharatKumawatds/ScreenSharing-Vonage/assets/172746681/387b6a0c-31f8-4793-a7dd-ee0746a4453e)
 
-dependencies {
-	        implementation 'com.github.bharatKumawatds:ScreenSharing-Vonage:1.0.0'
-	}
+![Screenshot 2024-06-19 at 3 24 08 PM](https://github.com/bharatKumawatds/ScreenSharing-Vonage/assets/172746681/e41effa4-ff71-4747-b35b-94625d2c0613)
+
 
 Step 3: create an instance of screen share class and initialize builder on oncreate() method like this 
 
